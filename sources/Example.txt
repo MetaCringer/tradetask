@@ -1,0 +1,18 @@
+Lubeck
+    salt:20
+    fish:50
+    cloth:60
+    copper:36
+    furs:96
+Reval
+    salt:35
+    fish:50
+    cloth:40
+    copper:60
+    furs:45
+Bergen
+    salt:62
+    fish:15
+    cloth:18
+    copper:82
+    furs:54

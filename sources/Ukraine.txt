@@ -1,0 +1,18 @@
+Kharkiv
+    salt:20
+    copper:36
+    furs:96
+Kyiv
+    fish:50
+    cloth:40
+    copper:60
+    furs:45
+Lviv
+    salt:62
+    fish:15
+    cloth:18
+    copper:82
+Odessa
+    salt:10
+    fish:12
+    cloth:56
