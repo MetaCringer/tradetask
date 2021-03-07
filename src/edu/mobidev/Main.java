@@ -13,13 +13,12 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    //public static File defaultfile = new File("sources/source.txt");
     public static int startcapital = 50;
     public static void main(String[] args){
         ITradePointFactory townfactory = null;
 
         Scanner s = new Scanner(System.in);
-        File dir =new File("sources/");
+        File dir =new File("configs/");
         if(!dir.exists()){
             dir.mkdir();
         }
@@ -45,7 +44,17 @@ public class Main {
 
 
         List<ITradePoint> towns = townfactory.getTradePoints();
+        for (ITradePoint town:
+             towns) {
+            System.out.println("Town: "+town.getName());
+            System.out.println("Price: ");
+            for (Map.Entry<IGoodie,Integer> price:
+                 town.getPrices().entrySet()) {
+                System.out.println(price.getKey().getName()+" : "+price.getValue());
+            }
+        }
         ITrader trader = new Trader(startcapital);
+        System.out.println("Trader begin its journey...");
         trader.followOptimalPath(towns);
     }
 }
