@@ -32,7 +32,11 @@ public class Main {
         int temp=-1;
         do {
             System.out.print("Choose number file [0.." + (configs.length - 1) + "]");
-            temp = s.nextInt();
+            try{
+                temp = s.nextInt();
+            }catch (Exception e){
+
+            }
         }while (temp < 0 || temp >= configs.length);
         File f = configs[temp];
 
