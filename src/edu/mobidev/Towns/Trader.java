@@ -2,7 +2,6 @@ package edu.mobidev.Towns;
 
 import edu.mobidev.*;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -41,7 +40,7 @@ public class Trader implements ITrader {
             System.out.println
                     ("Trader buy " + caryingGoodie.getName() +
                             " for "+ currentLocation.getPrice(g) +
-                            " in " +currentLocation.getName());//TODO
+                            " in " +currentLocation.getName()+" money left "+money);
 
             return true;
         }
@@ -64,8 +63,7 @@ public class Trader implements ITrader {
 
             return true;
         }catch (Exception e){
-            //TODO
-            e.printStackTrace();
+
         }
 
         return false;
@@ -125,7 +123,7 @@ public class Trader implements ITrader {
             for (Map.Entry<way,Map<IGoodie,Integer>> entry:
                  relations.entrySet()) {
                 if(visited.get(visited.size()-1).equals(entry.getKey().from)){
-                    for (ITradePoint v://TODO FIX ME
+                    for (ITradePoint v:
                          visited) {
                         if(entry.getKey().to.equals(v)){
                             continue for1;

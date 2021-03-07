@@ -1,14 +1,10 @@
 package edu.mobidev;
 
-import edu.mobidev.Towns.Town;
 import edu.mobidev.Towns.TownFromFileFactory;
 import edu.mobidev.Towns.Trader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -23,14 +19,27 @@ public class Main {
         if(!dir.exists()){
             dir.mkdir();
         }
-        System.out.println("Availible configs file: ");
+
+
+        int temp=-1;
+        do {
+            System.out.print("Write start capital of money: ");
+            try{
+                temp = Integer.parseInt(s.nextLine());
+            }catch (Exception e){
+
+            }
+        }while (temp < 0);
+
+
+        System.out.println("Availible configurations of towns files: ");
         File[] configs = dir.listFiles();
         for (int i = 0; i < configs.length; i++) {
             if(configs[i].isFile()){
                 System.out.println(i+" - "+configs[i].getName());
             }
         }
-        int temp=-1;
+        temp=-1;
         do {
             System.out.print("Choose number file [0.." + (configs.length - 1) + "]");
             try{
@@ -47,7 +56,7 @@ public class Main {
             e.printStackTrace();
         }
 
-
+        System.out.println("Config contains: ");
         List<ITradePoint> towns = townfactory.getTradePoints();
         for (ITradePoint town:
              towns) {
@@ -58,6 +67,7 @@ public class Main {
                 System.out.println(price.getKey().getName()+" : "+price.getValue());
             }
         }
+
         ITrader trader = new Trader(startcapital);
         System.out.println("Trader begin its journey...");
         trader.followOptimalPath(towns);

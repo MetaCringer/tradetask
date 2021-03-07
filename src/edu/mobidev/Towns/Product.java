@@ -7,10 +7,8 @@ import java.util.Objects;
 public class Product implements IGoodie {
 
     String name;
-    //int price;
-    public Product(String name/*, int price*/){
+    public Product(String name){
         this.name=name;
-        //this.price=price;
         if(!IGoodie.indexes.containsKey(this)){
             IGoodie.indexes.put(this,IGoodie.indexes.size());
         }
@@ -21,10 +19,7 @@ public class Product implements IGoodie {
         return name;
     }
 
-//    @Override
-//    public int getPrice() {
-//        return price;
-//    }
+
 
     @Override
     public boolean equals(Object o) {

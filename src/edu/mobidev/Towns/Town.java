@@ -1,7 +1,5 @@
 package edu.mobidev.Towns;
 
-
-
 import edu.mobidev.IGoodie;
 import edu.mobidev.ITradePoint;
 

@@ -7,6 +7,6 @@ public interface IPath {
     public void addProfit(int profit);
     public void direct(ITrader trader);
     public List<ITradePoint> getList();
-    public List<IGoodie> getChoosedGoodie();// TODO на 1 меньше требуеться чем городов
+    public List<IGoodie> getChoosedGoodie();
     public IPath clone();
 }
