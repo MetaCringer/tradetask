@@ -7,6 +7,7 @@ import edu.mobidev.Towns.Trader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +34,7 @@ public class Main {
         do {
             System.out.print("Choose number file [0.." + (configs.length - 1) + "]");
             try{
-                temp = s.nextInt();
+                temp = Integer.parseInt(s.nextLine());
             }catch (Exception e){
 
             }
